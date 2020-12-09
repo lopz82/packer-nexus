@@ -54,7 +54,6 @@ Once Packer is done, you should see a new AMI in the EC2 section of your AWS con
 The tests are written in go and use [Terratest](https://terratest.gruntwork.io/)
 
 ```shell
-$ go mod init tests
 $ cd test
 $ go test -v -timeout 30m -ami $(cat ../nexus/manifest.json | jq -r '.builds[0].artifact_id' | grep -o 'ami.*$') ./...
 ```
