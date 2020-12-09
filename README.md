@@ -49,15 +49,31 @@ Once Packer is done, you should see a new AMI in the EC2 section of your AWS con
 
 > Note: for convenience, a manifests.json file is created. This file can be used to test the image.
 
+## Testing
+The tests are written in go and use [Terratest](https://terratest.gruntwork.io/).
+### Terraform configuration
+
+In order to test the image, you will need to configure the following:
+
+* AWS Key Pair
+* Security Group granting access to port 22
+
+> Make sure you add the public key to your ssh agent `ssh-add ~/.ssh/YourKey.pem`
+
+
 ### Testing the image
 
-The tests are written in go and use [Terratest](https://terratest.gruntwork.io/)
+Just run the following commands:
 
 ```shell
-$ go mod init tests
 $ cd test
 $ go test -v -timeout 30m -ami $(cat ../nexus/manifest.json | jq -r '.builds[0].artifact_id' | grep -o 'ami.*$') ./...
 ```
+
+Double check that the test instance is terminated. That should happen even if the tests fail, 
+but it is recommended not to incur unexpected expenses.
+
+> You can also provide manually the ami instead of extracting it from `manifests.json`.
 
 ## Contributing
 
