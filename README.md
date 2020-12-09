@@ -28,7 +28,7 @@ You can set up some configurations in variables.json
 
 * `version`: Nexus Repository Manager OSS version to be installed. You can check older versions [here](https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3)
 * `data-path`: path where Nexus Repository will store all its data. You can configure it to point to a dir where you want to mount an EBS, for example.
-* `ubuntu_version`: Ubuntu version used as base image.
+* `ubuntu_version`: Ubuntu version used as base image. (More images)[https://cloud-images.ubuntu.com/locator/ec2/]
 
 ```json
 {
