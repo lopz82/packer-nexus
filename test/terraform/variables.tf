@@ -1,6 +1,5 @@
 variable "region" {
   description = "AWS region where thee EC2 instance will be deployed"
-  default     = "eu-central-1"
   type        = string
 }
 
@@ -17,27 +16,21 @@ variable "ec2_instance_type" {
 
 variable "security_groups" {
   description = "List of security groups"
-  default     = ["22-open"]
   type        = list(string)
 }
 
 variable "key_pair_name" {
   description = "Private SSH key to provisioning. It is the private key from the AWS key pair"
-  default     = "terraform_testing"
   type        = string
 }
 
 variable "availability_zone" {
   description = "AWS availability zone"
-  default     = "eu-central-1a"
   type        = string
 }
 
 variable "ec2_instance_tags" {
   description = "Tags to be applied to the EC2 instance"
-  default     = {
-    "environment" = "test"
-  }
   type        = map(string)
 }
 

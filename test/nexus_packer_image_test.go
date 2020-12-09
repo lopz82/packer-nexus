@@ -18,6 +18,7 @@ func TestNexusRunningProperly(t *testing.T) {
 		Vars: map[string]interface{}{
 			"ami": *ami,
 		},
+		VarFiles: []string{"./test.tfvars"},
 	}
 	defer terraform.Destroy(t, opts)
 
