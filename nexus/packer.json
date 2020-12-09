@@ -54,7 +54,7 @@
         "echo '-Djava.util.prefs.userRoot=/home/nexus/.java' | sudo tee -a /opt/nexus-{{ user `version` }}/bin/nexus.vmoptions",
         "sudo systemctl daemon-reload",
         "sudo systemctl enable nexus.service",
-        "sudo systemctl start nexus.service",
+        "sudo systemctl start nexus.service"
       ]
     }
   ],
