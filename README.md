@@ -12,8 +12,8 @@ You will need the following tools:
 * An [AWS](https://aws.amazon.com/?nc2=h_lg) account
 * [Packer](https://learn.hashicorp.com/tutorials/packer/getting-started-install)
 
-* A AWS Security Group with access to port 22
-* A AWS SSH key pair
+* An AWS Security Group with access to port 22
+* An AWS SSH key pair
 
 Optional, just for testing:
 
